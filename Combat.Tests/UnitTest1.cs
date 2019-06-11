@@ -143,12 +143,33 @@ namespace Combat.Tests
             var testAttackerFirstLevel = new Warrior("Melee", 1, 0, 0);
             var testTargetSixthLevel = new Warrior("Melee", 6, 0, 1);
 
-            int damageEqualLevel = 0;
-            int damageLowerLevel = 0;
+            Random damageValue = new Random();
+
+            // We make 100 tests where we are counting lower level damage to equal level damage ratio
+            // In each test we sum damage from 100 attacks
+            // Then we will count average ratio, round to 1 decimal point and assert to 0.5
+            float sumRatio = 0;
             for (int i = 0; i < 100; i++)
             {
+                int damageEqualLevel = 0;
+                int damageLowerLevel = 0;
+                for (int j = 0; j < 100; j++)
+                {
+                    damageEqualLevel += damageValue.Next(50, 101);
+                }
 
+                for (int j = 0; j < 100; j++)
+                {
+                    damageLowerLevel += (int)(damageValue.Next(50, 101) * 0.5);
+                }
+
+                float ratio = (float)damageLowerLevel / damageEqualLevel;
+                sumRatio += ratio;
             }
+
+            float avgRatio = (float)Math.Round(sumRatio / 100, 1, MidpointRounding.AwayFromZero);
+
+            Assert.Equal(0.5, avgRatio);
         }
 
         [Fact]
