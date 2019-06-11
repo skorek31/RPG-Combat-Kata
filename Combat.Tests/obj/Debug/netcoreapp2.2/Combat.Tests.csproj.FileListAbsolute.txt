@@ -1,0 +1,17 @@
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.Tests.deps.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.Tests.runtimeconfig.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.Tests.runtimeconfig.dev.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.Tests.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.Tests.pdb
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\bin\Debug\netcoreapp2.2\Combat.pdb
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.csprojAssemblyReference.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.csproj.CoreCompileInputs.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.AssemblyInfoInputs.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.AssemblyInfo.cs
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.csproj.CopyComplete
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat.Tests\obj\Debug\netcoreapp2.2\Combat.Tests.pdb

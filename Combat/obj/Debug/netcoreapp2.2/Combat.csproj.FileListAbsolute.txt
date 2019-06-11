@@ -1,0 +1,11 @@
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\bin\Debug\netcoreapp2.2\Combat.deps.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\bin\Debug\netcoreapp2.2\Combat.runtimeconfig.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\bin\Debug\netcoreapp2.2\Combat.runtimeconfig.dev.json
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\bin\Debug\netcoreapp2.2\Combat.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\bin\Debug\netcoreapp2.2\Combat.pdb
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.csprojAssemblyReference.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.csproj.CoreCompileInputs.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.AssemblyInfoInputs.cache
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.AssemblyInfo.cs
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.dll
+F:\PROGRAMOWANIE\C-Sharp\Ćwiczenia\RPG-Combat-Kata\Combat\obj\Debug\netcoreapp2.2\Combat.pdb

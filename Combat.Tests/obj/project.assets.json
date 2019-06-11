@@ -1675,6 +1675,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "Combat/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Combat.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Combat.dll": {}
+        }
       }
     }
   },
@@ -5847,10 +5857,16 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Combat/1.0.0": {
+      "type": "project",
+      "path": "../Combat/Combat.csproj",
+      "msbuildProject": "../Combat/Combat.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Combat >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
       "Microsoft.NETCore.App >= 2.2.0",
       "xunit >= 2.4.0",
@@ -5889,7 +5905,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\PROGRAMOWANIE\\C-Sharp\\Ćwiczenia\\RPG-Combat-Kata\\Combat\\Combat.csproj": {
+              "projectPath": "F:\\PROGRAMOWANIE\\C-Sharp\\Ćwiczenia\\RPG-Combat-Kata\\Combat\\Combat.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
