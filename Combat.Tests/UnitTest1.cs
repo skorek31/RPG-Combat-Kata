@@ -115,7 +115,7 @@ namespace Combat.Tests
         {
             var testAttacker = new Warrior("Melee", 1, 0, 0);
             var testTarget = new Warrior("Melee", 1, 0, 1);
-            Assert.Equal(0, testAttacker.Attack(testTarget));
+            Assert.True(testAttacker.Attack(testTarget) > 0);
         }
 
         [Fact]
@@ -131,7 +131,7 @@ namespace Combat.Tests
         {
             var testAttacker = new Warrior("Ranged", 1, 0, 0);
             var testTarget = new Warrior("Melee", 1, 0, 10);
-            Assert.Equal(0, testAttacker.Attack(testTarget));
+            Assert.True(testAttacker.Attack(testTarget) > 0);
         }
 
         [Fact]
@@ -141,7 +141,53 @@ namespace Combat.Tests
             var testTargetEqualLevel = new Warrior("Melee", 1, 0, 1);
 
             var testAttackerFirstLevel = new Warrior("Melee", 1, 0, 0);
-            var testTargetSixthLevel = new Warrior("Melee", 6, 0, 0);
+            var testTargetSixthLevel = new Warrior("Melee", 6, 0, 1);
+
+            int damageEqualLevel = 0;
+            int damageLowerLevel = 0;
+            for (int i = 0; i < 100; i++)
+            {
+
+            }
+        }
+
+        [Fact]
+        public void Greater_Damage_If_Target_Is_5lvl_Lower()
+        {
+            var testAttackerEqualLevel = new Warrior("Melee", 1, 0, 0);
+            var testTargetEqualLevel = new Warrior("Melee", 1, 0, 1);
+
+            var testAttackerSixthLevel = new Warrior("Melee", 6, 0, 0);
+            var testTargetFirstLevel = new Warrior("Melee", 1, 0, 1);
+
+            Random damageValue = new Random();
+            
+            // We are makeing 100 tests where we are counting higher level damage to equal level damage ratio
+            // In each test we sum damage from 100 attacks
+            // Then we will count average ratio, round to 1 decimal point and assert to 1.5
+            float sumRatio = 0;
+            for (int i = 0; i < 100; i++)
+            {
+                int damageEqualLevel = 0;
+                int damageHigherLevel = 0;
+
+                for (int j = 0; j < 100; j++)
+                {
+                    damageEqualLevel += damageValue.Next(50, 101);
+                }
+
+                for (int j = 0; j < 100; j++)
+                {
+                    damageHigherLevel += (int)(damageValue.Next(50, 101) * 1.5);
+                }
+
+                float ratio = (float)damageHigherLevel / damageEqualLevel;
+                sumRatio += ratio;
+            }
+
+            float avgRatio = (float)Math.Round(sumRatio / 100, 1, MidpointRounding.AwayFromZero);
+
+            Assert.Equal(1.5, avgRatio);
         }
     }
 }
