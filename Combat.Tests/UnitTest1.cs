@@ -93,6 +93,26 @@ namespace Combat.Tests
             }
             Assert.Equal(-1, testAttacker.Heal(testTarget));
         }
+
+        [Fact]
+        public void Ally_Can_Be_Healed()
+        {
+            var testAttacker = new Warrior("Melee", 1, 0, 0);
+            var testTarget = new Warrior("Melee", 1, 0, 1);
+            testAttacker.SetFaction(0);
+            testTarget.SetFaction(0);
+            Assert.Equal(0, testAttacker.Heal(testTarget));
+        }
+
+        [Fact]
+        public void Enemy_Cannot_Be_Healed()
+        {
+            var testAttacker = new Warrior("Melee", 1, 0, 0);
+            var testTarget = new Warrior("Melee", 1, 0, 1);
+            testAttacker.SetFaction(0);
+            testTarget.SetFaction(1);
+            Assert.Equal(-1, testAttacker.Heal(testTarget));
+        }
         
         [Fact]
         public void Warrior_Cannot_Damage_Itself()
