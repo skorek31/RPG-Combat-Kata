@@ -12,6 +12,46 @@ namespace Combat
         }
     }
 
+    class Faction
+    {
+        private int id;
+        private string name;
+
+        public Faction()
+        {
+            this.id = -1;
+            this.name = "None";
+        }
+
+        public Faction(int id)
+        {
+            this.id = id;
+            SetFactionName(id);
+        }
+
+        public void SetFactionName(int id)
+        {
+            if (id == 0)
+            {
+                this.name = "Good";
+            }
+            else
+            {
+                this.name = "Evil";
+            }
+        }
+
+        public string GetFactionName()
+        {
+            return this.name;
+        }
+
+        public int GetFactionID()
+        {
+            return this.id;
+        }
+    }
+
     public interface ICharacter
     {
         int GetHealth();
@@ -28,6 +68,7 @@ namespace Combat
         private int range;
         private int x;
         private int y;
+        private Faction warriorFaction = new Faction();
         // Set random character position
         // private static Random placement = new Random();
         // private int x = placement.Next(0, 101);
@@ -172,6 +213,11 @@ namespace Combat
             {
                 return false;
             }
+        }
+
+        public void SetFaction(int id)
+        {
+            this.warriorFaction.SetFactionName(id);
         }
     }
 }
