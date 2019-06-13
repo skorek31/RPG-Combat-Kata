@@ -135,6 +135,23 @@ namespace Combat
         {
             this.warriorFaction.SetFactionName(id);
         }
+
+        public bool IsAlly(Warrior target)
+        {
+            /// <summary>
+            /// Method check if objects belongs to the same faction
+            /// </summary>
+            /// <param name="target">Object to check.</param>
+            /// <returns>
+            /// True if objects belongs to the same faction, otherwise false.
+            /// </returns>
+            
+            if (target.GetFaction() == this.GetFaction())
+            {
+                return true;
+            }
+            return false;
+        }
         
         public int Attack(Warrior target)
         {
