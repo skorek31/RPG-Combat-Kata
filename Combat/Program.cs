@@ -125,6 +125,16 @@ namespace Combat
         {
             return alive;
         }
+
+        public string GetFaction()
+        {
+            return this.warriorFaction.GetFactionName();
+        }
+
+        public void SetFaction(int id)
+        {
+            this.warriorFaction.SetFactionName(id);
+        }
         
         public int Attack(Warrior target)
         {
@@ -171,10 +181,11 @@ namespace Combat
             }
         }
         
-        public void Heal()
+        public void Heal(Warrior target)
         {
             Random healValue = new Random();
-            if (alive)
+            string targetFaction = target.GetFaction();
+            if (alive && target != this && targetFaction == this.GetFaction())
             {
                 health += healValue.Next(50, 101);
                 if (health > 1000)
@@ -213,11 +224,6 @@ namespace Combat
             {
                 return false;
             }
-        }
-
-        public void SetFaction(int id)
-        {
-            this.warriorFaction.SetFactionName(id);
         }
     }
 }
