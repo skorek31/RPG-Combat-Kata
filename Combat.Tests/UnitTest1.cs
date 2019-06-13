@@ -77,9 +77,9 @@ namespace Combat.Tests
         [Fact]
         public void Warrior_Cannot_Be_Healed_Above_1000HP()
         {
-            var testObject = new Warrior("Melee", 1);
-            testObject.Heal();
-            Assert.Equal(1000, testObject.GetHealth());
+            var testAttacker = new Warrior("Melee", 1);
+            var testTarget = new Warrior("Melee", 1);
+            Assert.Equal(0, testAttacker.Heal(testTarget));
         }
 
         [Fact]
@@ -91,8 +91,7 @@ namespace Combat.Tests
             {
                 testAttacker.Attack(testTarget);
             }
-            testTarget.Heal();
-            Assert.Equal(0, testTarget.GetHealth());
+            Assert.Equal(-1, testAttacker.Heal(testTarget));
         }
         
         [Fact]

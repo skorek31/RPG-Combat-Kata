@@ -181,18 +181,36 @@ namespace Combat
             }
         }
         
-        public void Heal(Warrior target)
+        public int Heal(Warrior target)
         {
-            Random healValue = new Random();
+            /// <summary>
+            /// Method handles warrior healing his ally.
+            /// In order to make successful heal target needs to be:
+            /// 1. Alive
+            /// 2. Different than a Character performing healing action.
+            /// 3. In the same faction as a Character performing action.
+            /// </summary>
+            /// <param name="target">Heal target. Must be in the same faction.</param>
+            /// <returns>
+            /// If heal was successful:
+            /// Health value change (e.g. 0 if target HP = max before heal)
+            /// -1 - heal unsuccessful
+            /// </returns>
+
+            Random randomValue = new Random();
             string targetFaction = target.GetFaction();
-            if (alive && target != this && targetFaction == this.GetFaction())
+            if (target.IsAlive() && target != this && targetFaction == this.GetFaction())
             {
-                health += healValue.Next(50, 101);
+                int healValue = randomValue.Next(50, 101);
+                health += healValue;
                 if (health > 1000)
                 {
                     health = 1000;
+                    return 0;
                 }
+                return healValue;
             }
+            return -1;
         }
 
         public List<int> GetCoordinates()
