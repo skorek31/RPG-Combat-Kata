@@ -69,31 +69,8 @@ namespace Combat
         private int x;
         private int y;
         private Faction warriorFaction = new Faction();
-        // Set random character position
-        // private static Random placement = new Random();
-        // private int x = placement.Next(0, 101);
-        // private int y = placement.Next(0, 101);
-
-
-        public Warrior(string characterClass, int level)
-        {
-            this.characterClass = characterClass;
-            this.level = level;
-
-            Random placement = new Random();
-            this.x = placement.Next(0, 101);
-            this.y = placement.Next(0, 101);
-
-            if (characterClass == "Melee")
-            {
-                this.range = 2;
-            }
-            else if (characterClass == "Ranged")
-            {
-                this.range = 20;
-            }
-        }
-
+        
+        
         public Warrior(string characterClass, int level, int x, int y)
         {
             this.characterClass = characterClass;

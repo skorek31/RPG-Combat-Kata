@@ -9,21 +9,21 @@ namespace Combat.Tests
         [Fact]
         public void New_Warrior_Should_Have_1000_Health()
         {
-            var testObject = new Warrior("Melee", 1);
+            var testObject = new Warrior("Melee", 1, 0, 0);
             Assert.Equal(1000, testObject.GetHealth());
         }
         
         [Fact]
         public void New_Warrior_Should_Have_1st_Level()
         {
-            var testObject = new Warrior("Melee", 1);
+            var testObject = new Warrior("Melee", 1, 0, 0);
             Assert.Equal(1, testObject.GetLevel()); 
         }
 
         [Fact]
         public void New_Warrior_ShouldBe_Alive()
         {
-            var testObject = new Warrior("Melee", 1);
+            var testObject = new Warrior("Melee", 1, 0, 0);
             Assert.True(testObject.IsAlive());
         }
 
@@ -77,8 +77,8 @@ namespace Combat.Tests
         [Fact]
         public void Warrior_Cannot_Be_Healed_Above_1000HP()
         {
-            var testAttacker = new Warrior("Melee", 1);
-            var testTarget = new Warrior("Melee", 1);
+            var testAttacker = new Warrior("Melee", 1, 0, 0);
+            var testTarget = new Warrior("Melee", 1, 0, 1);
             Assert.Equal(0, testAttacker.Heal(testTarget));
         }
 
@@ -117,7 +117,7 @@ namespace Combat.Tests
         [Fact]
         public void Warrior_Cannot_Damage_Itself()
         {
-            var testObject = new Warrior("Melee", 1);
+            var testObject = new Warrior("Melee", 1, 0, 0);
             Assert.Equal(-1, testObject.Attack(testObject));
         }
         
