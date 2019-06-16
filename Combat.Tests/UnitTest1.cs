@@ -73,6 +73,18 @@ namespace Combat.Tests
             }
             Assert.False(testTarget.IsAlive());
         }
+
+        [Fact]
+        public void Warriors_Belong_To_The_Same_Faction_Are_Allies()
+        {
+            var testObject1 = new Warrior("Melee", 1, 0, 0);
+            testObject1.JoinFaction(0);
+
+            var testObject2 = new Warrior("Melee", 1, 0, 1);
+            testObject2.JoinFaction(0);
+
+            Assert.True(testObject1.IsAlly(testObject2));
+        }
         
         [Fact]
         public void Warrior_Cannot_Be_Healed_Above_1000HP()
@@ -99,8 +111,8 @@ namespace Combat.Tests
         {
             var testAttacker = new Warrior("Melee", 1, 0, 0);
             var testTarget = new Warrior("Melee", 1, 0, 1);
-            testAttacker.SetFaction(0);
-            testTarget.SetFaction(0);
+            testAttacker.JoinFaction(0);
+            testTarget.JoinFaction(0);
             Assert.Equal(0, testAttacker.Heal(testTarget));
         }
 
@@ -109,8 +121,8 @@ namespace Combat.Tests
         {
             var testAttacker = new Warrior("Melee", 1, 0, 0);
             var testTarget = new Warrior("Melee", 1, 0, 1);
-            testAttacker.SetFaction(0);
-            testTarget.SetFaction(1);
+            testAttacker.JoinFaction(0);
+            testTarget.JoinFaction(1);
             Assert.Equal(-1, testAttacker.Heal(testTarget));
         }
         
