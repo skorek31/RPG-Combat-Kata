@@ -12,16 +12,10 @@ namespace Combat
         }
     }
 
-    class Faction
+    public class Faction
     {
         private int id;
         private string name;
-
-        public Faction()
-        {
-            this.id = -1;
-            this.name = "None";
-        }
 
         public Faction(int id)
         {
@@ -33,11 +27,19 @@ namespace Combat
         {
             if (id == 0)
             {
-                this.name = "Good";
+                this.name = "The Harpers";
+            }
+            else if (id == 1)
+            {
+                this.name = "The Order Of The Gauntlet";
+            }
+            else if (id == 2)
+            {
+                this.name = "The Emerald Enclave";
             }
             else
             {
-                this.name = "Evil";
+                this.name = "The Lord's Alliance";
             }
         }
 
@@ -68,9 +70,9 @@ namespace Combat
         private int range;
         private int x;
         private int y;
-        private Faction warriorFaction = new Faction();
+        private List<Faction> warriorFactions = new List<Faction>();
         
-        
+
         public Warrior(string characterClass, int level, int x, int y)
         {
             this.characterClass = characterClass;
@@ -103,14 +105,30 @@ namespace Combat
             return alive;
         }
 
-        public string GetFaction()
+        public List<Faction> GetFactionsList()
         {
-            return this.warriorFaction.GetFactionName();
+            return warriorFactions;
         }
 
-        public void SetFaction(int id)
+        public void JoinFaction(int factionID)
         {
-            this.warriorFaction.SetFactionName(id);
+            this.warriorFactions.Add(new Faction(factionID));
+        }
+
+        public void LeaveFaction(int factionID)
+        {
+            /// <summary>
+            /// Finds and removes faction with given ID
+            /// </summary>
+            /// <param name="factionID">ID number of faction to remove.</param>
+
+            foreach (Faction item in warriorFactions)
+            {
+                if (item.GetFactionID() == factionID)
+                {
+                    this.warriorFactions.Remove(item);
+                }
+            }
         }
 
         public bool IsAlly(Warrior target)
@@ -123,9 +141,17 @@ namespace Combat
             /// True if objects belongs to the same faction, otherwise false.
             /// </returns>
             
-            if (target.GetFaction() == this.GetFaction())
+            List<Faction> targetFactions = target.GetFactionsList();
+
+            foreach (Faction warriorFaction in this.GetFactionsList())
             {
-                return true;
+                foreach (Faction targetFaction in targetFactions)
+                {
+                    if (warriorFaction.GetFactionID() == targetFaction.GetFactionID())
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -192,8 +218,8 @@ namespace Combat
             /// </returns>
 
             Random randomValue = new Random();
-            string targetFaction = target.GetFaction();
-            if (target.IsAlive() && target != this && targetFaction == this.GetFaction())
+            
+            if (target.IsAlive() && target != this && this.IsAlly(target))
             {
                 int healValue = randomValue.Next(50, 101);
                 health += healValue;
