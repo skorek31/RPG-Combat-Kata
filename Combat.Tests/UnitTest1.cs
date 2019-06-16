@@ -42,10 +42,6 @@ namespace Combat.Tests
         {
             var testAttacker = new Warrior("Melee", 1, 0, 0);
             var testTarget = new Warrior("Melee", 1, 0, 1);
-            // int hpBeforeAttack = testTarget.GetHealth();
-            // testAttacker.Attack(testTarget);
-            // int hpAfterAttack = testTarget.GetHealth();
-            // int result = hpBeforeAttack - hpAfterAttack;
             int damage = testAttacker.Attack(testTarget);
             Assert.True(damage > 49 && damage < 101);
         }

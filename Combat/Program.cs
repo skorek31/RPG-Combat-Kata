@@ -264,4 +264,70 @@ namespace Combat
             }
         }
     }
+
+    public interface IProp
+    {
+        int GetID();
+        int GetHealth();
+        string SetName(int id);
+        string GetName();
+    }
+
+    public class Tree : IProp
+    {
+        int id;
+        int health;
+        string name;
+        bool destroyed = false;
+        
+        public Tree(int id)
+        {
+            this.id = id;
+            this.name = this.SetName(id);
+
+            if (id == 0)
+            {
+                this.health = 2000;
+            }
+            else if (id == 1)
+            {
+                this.health = 500;
+            }
+            else
+            {
+                this.health = 1000;
+            }
+        }
+
+        public string SetName(int id)
+        {
+            if (id == 0)
+            {
+                return "Oak";
+            }
+            else if (id == 1)
+            {
+                return "Lime-tree";
+            }
+            else
+            {
+                return "Unknown";
+            }
+        }
+
+        public string GetName()
+        {
+            return this.name;
+        } 
+
+        public int GetHealth()
+        {
+            return this.health;
+        }
+
+        public int GetID()
+        {
+            return this.id;
+        }
+    }
 }
