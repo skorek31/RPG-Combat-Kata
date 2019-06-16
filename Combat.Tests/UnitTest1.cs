@@ -245,5 +245,17 @@ namespace Combat.Tests
 
             Assert.Equal(1.5, avgRatio);
         }
+
+        [Fact]
+        public void Allies_Cannot_Deal_Damage_To_One_Another()
+        {
+            var testAttacker = new Warrior("Melee", 1, 0, 0);
+            testAttacker.JoinFaction(0);
+
+            var testTarget = new Warrior("Melee", 1, 0, 1);
+            testTarget.JoinFaction(0);
+
+            Assert.Equal(-1, testAttacker.Attack(testTarget));
+        }
     }
 }

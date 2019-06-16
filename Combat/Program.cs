@@ -138,7 +138,7 @@ namespace Combat
             /// </summary>
             /// <param name="target">Object to check.</param>
             /// <returns>
-            /// True if objects belongs to the same faction, otherwise false.
+            /// True if objects belongs to at lease one the same faction, otherwise false.
             /// </returns>
             
             List<Faction> targetFactions = target.GetFactionsList();
@@ -167,7 +167,7 @@ namespace Combat
             /// -1 - if character tried to attack itself or is out of range
             /// </returns>
 
-            if (target != this && this.InRange(target))
+            if (target != this && this.InRange(target) && !this.IsAlly(target))
             {
                 Random randomDamage = new Random();
                 int damageValue = -1;
