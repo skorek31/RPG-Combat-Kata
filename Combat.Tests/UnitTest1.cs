@@ -89,9 +89,13 @@ namespace Combat.Tests
         [Fact]
         public void Warrior_Cannot_Be_Healed_Above_1000HP()
         {
-            var testAttacker = new Warrior("Melee", 1, 0, 0);
-            var testTarget = new Warrior("Melee", 1, 0, 1);
-            Assert.Equal(0, testAttacker.Heal(testTarget));
+            var testObject1 = new Warrior("Melee", 1, 0, 0);
+            testObject1.JoinFaction(0);
+
+            var testObject2 = new Warrior("Melee", 1, 0, 1);
+            testObject2.JoinFaction(0);
+
+            Assert.Equal(0, testObject1.Heal(testObject2));
         }
 
         [Fact]
